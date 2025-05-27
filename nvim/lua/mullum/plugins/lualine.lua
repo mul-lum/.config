@@ -2,11 +2,11 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-        -- local theme= require 'mullum.themes.gruvbox_custom_dark'
+        local gruvbox_custom = require 'assets.gruvbox_custom'
 
         require('lualine').setup {
               options = {
-                theme = 'ayu',
+                theme = gruvbox_custom,
               },
               sections = {
                 lualine_a = { { 'mode' } },

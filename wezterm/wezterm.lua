@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local keybinds = require 'core.keybinds'
 
 local config = wezterm.config_builder()
 
@@ -6,30 +7,11 @@ local config = wezterm.config_builder()
 config.font_size = 10
 config.font = wezterm.font '0xProto Nerd Font'
 config.line_height = 1.2
-config.color_scheme = 'Builtin Dark'
 config.colors = {
-    background = 'black',
-    foreground = "#d0d0d0",
-    ansi = {
-      "#000000", -- black
-      "#ff0000", -- red
-      "#00ff00", -- green
-      "#ffff00", -- yellow
-      "#0000ff", -- blue
-      "#ff00ff", -- magenta
-      "#00ffff", -- cyan
-      "#ffffff", -- white
-    },
-    brights = {
-      "#808080", -- bright black (gray)
-      "#ff0000", -- bright red
-      "#00ff00", -- bright green
-      "#ffff00", -- bright yellow
-      "#5c5cff", -- bright blue
-      "#ff00ff", -- bright magenta
-      "#00ffff", -- bright cyan
-      "#ffffff", -- bright white
-    },
+    background = "#171717",
+    foreground = "#ebdbb2",
+
+    cursor_bg = "#ebdbb2",
 
 	tab_bar = {
 		background = 'rgba(0,0,0,0)'
@@ -49,8 +31,9 @@ config.hide_tab_bar_if_only_one_tab = true
 -- config.integrated_title_buttons = {'Hide', 'Maximize', 'Close'}
 
 -- window stuff
-config.window_padding = { left= 10, right= 10, top= 10, bottom= 2, }
+config.window_padding = { left= 10, right= 10, top= 10, bottom= 0, }
 config.window_background_opacity = 0.9
+
 
 -- window spec stuff
 config.max_fps = 120
@@ -62,5 +45,7 @@ config.front_end = 'Software'
 config.default_prog = { 'C://Program Files//Git//bin//bash.exe', '-l' }
 config.default_cwd = 'C://Users//jayco'
 config.term = 'xterm-256color'
+
+keybinds.apply_to_config(config)
 
 return config

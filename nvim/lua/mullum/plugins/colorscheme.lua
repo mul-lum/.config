@@ -32,6 +32,17 @@ return {
         end
     },
     {
+        'rose-pine/neovim',
+        name = 'rose-pine',
+        config = function()
+            require("rose-pine").setup {
+                styles = {
+                    transparency = true,
+                }
+            }
+        end
+    },
+    {
         'Shatur/neovim-ayu',
         config = function()
             require('ayu').setup {
@@ -46,6 +57,16 @@ return {
                     CursorColumn = { bg = "None" },
                     VertSplit = { bg = "None" },
                 },
+            }
+        end
+    },
+    {
+        'catppuccin/nvim',
+        name= 'catppuccin',
+        config= function ()
+            require('catppuccin').setup {
+                transparent_background= true,
+                term_colors= true
             }
         end
     }

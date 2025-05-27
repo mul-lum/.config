@@ -1,4 +1,5 @@
 require 'mullum.core'
 require 'mullum.lazy'
 
-vim.cmd('colorscheme ayu-dark')
+local current_theme = 'gruvbox'
+vim.cmd('colorscheme ' .. current_theme)

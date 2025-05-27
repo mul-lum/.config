@@ -94,7 +94,14 @@ return {
         })
 
         lspconfig.basedpyright.setup {
-            capabilities = capabilities
+            capabilities = capabilities,
+            settings = {
+                basedpyright = {
+                    analysis = {
+                        typeCheckingMode = 'basic'
+                    }
+                }
+            }
         }
 
 
