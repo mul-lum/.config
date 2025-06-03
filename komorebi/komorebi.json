@@ -1,20 +1,31 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.37/schema.json",
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
+
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
-  "default_workspace_padding": 5,
-  "default_container_padding": 5,
-  "border": true,
-  "border_width": 2,
+
+  "default_workspace_padding": 10,
+  "default_container_padding": 10,
+  "manage_rules": [
+      {
+          "kind": "Exe",
+          "id": "wezterm-gui.exe",
+          "matching_strategy": "Equals"
+      }
+  ],
+
+  "border": false,
+  "border_width": 8,
   "border_offset": 0,
   "border_colours": {
-    "focused":   { "r": 235, "g": 219, "b": 178 },
-    "unfocused": { "r": 235, "g": 219, "b": 178 },
-    "single":    { "r": 235, "g": 219, "b": 178 },
-    "stack":     { "r": 235, "g": 219, "b": 178 },
-    "monocle":   { "r": 235, "g": 219, "b": 178 }
+    "focused":   { "r": 0, "g": 0, "b": 0 },
+    "unfocused": { "r": 0, "g": 0, "b": 0 },
+    "single":    { "r": 0, "g": 0, "b": 0 },
+    "stack":     { "r": 0, "g": 0, "b": 0 },
+    "monocle":   { "r": 0, "g": 0, "b": 0 }
   },
+
   "monitors": [
     {
       "workspaces": [

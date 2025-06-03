@@ -24,21 +24,21 @@ return {
 		end)
 
         -- Remove from buffer
-        vim.keymap.set('n', '<C-x>', function() 
-            harpoon:list():remove()
+        vim.keymap.set('n', '<C-x>', function()
+            harpoon:list():clear()
         end)
 
 		--Harpoon marked files
-		vim.keymap.set("n", "<C-u>", function()
+		vim.keymap.set("n", "<leader>1", function()
 			harpoon:list():select(1)
 		end)
-		vim.keymap.set("n", "<C-i>", function()
+		vim.keymap.set("n", "<leader>2", function()
 			harpoon:list():select(2)
 		end)
-		vim.keymap.set("n", "<C-n>", function()
+		vim.keymap.set("n", "<leader>3", function()
 			harpoon:list():select(3)
 		end)
-		vim.keymap.set("n", "<C-m>", function()
+		vim.keymap.set("n", "<leader>4", function()
 			harpoon:list():select(4)
 		end)
 

@@ -47,8 +47,6 @@ return {
                         gap = 1,
                     },
                     {
-                        'kind_icon',
-                        gap = 1,
                         'kind'
                     }
                 }
@@ -56,10 +54,27 @@ return {
         }
     },
 
+    cmdline = {
+      keymap = {
+        ['<Tab>'] = { 'accept' },
+      },
+      -- (optionally) automatically show the menu
+      completion = { menu = { auto_show = true } }
+    },
+
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
+      providers = {
+          cmdline = {
+              min_keyword_length = function(ctx)
+                  -- when typing a command, only show when the keyword is 3 characters or longer
+                  if ctx.mode == 'cmdline' and string.find(ctx.line, ' ') == nil then return 3 end
+                  return 0
+              end
+          }
+      }
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

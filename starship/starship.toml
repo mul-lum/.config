@@ -1,32 +1,36 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 format = """
+$username\
+$hostname \
 $directory \
-$username \
-[~](color_text) \
 $character
 """
 
 palette = "gruvbox_dark"
+add_newline = false
+
+[username]
+style_root = "color_green"
+style_user = "color_green"
+format = "[$user]($style)"
+aliases = { "jayco" = "moses"}
+show_always = true
+
+[hostname]
+ssh_only = false
+style = "color_purple"
+format = "@[$hostname]($style)"
+disabled = false
 
 [directory]
-style = "italic bold color_blue"
-format = "\\[[$path]($style)\\]"
+style = "color_blue"
+format = "[$path]($style)"
 truncation_length = 1
 truncation_symbol = "~/"
 home_symbol = "adam"
 
-[username]
-style_root = "bold color_green"
-style_user = "bold color_green"
-format = "[upon \\[[$user]($style)\\]](color_text)"
-aliases = { "jayco" = "moses"}
-show_always = true
-
-[line_break]
-disabled = false
-
 [character]
-success_symbol = "[\\$](color_orange)"
+success_symbol = "[\\$](color_text)"
 error_symbol   = "[\\$](color_red)"
 
 [palettes.gruvbox_dark]

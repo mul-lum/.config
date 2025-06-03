@@ -1,15 +1,27 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- x doesnt save
 vim.keymap.set({ 'n', 'v' }, 'x', [["_x]])
 
+-- move lines up and down in visual
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
 
-vim.keymap.set({ 'i', 'v' }, '<C-q>', '<Esc>')
-vim.keymap.set('n', '<C-e>', '<cmd>Ex<CR>')
-vim.keymap.set("n", "<C-q>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
+-- move up and down easier
+vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true})
+vim.keymap.set('n', '<C-u>', '<C-u>zz', {noremap = true})
+vim.keymap.set('n', '<C-f>', '<C-f>zz', {noremap = true})
+vim.keymap.set('n', '<C-b>', '<C-b>zz', {noremap = true})
 
+-- netrw + exit bind
+vim.keymap.set({ 'i', 'v' }, '<C-q>', '<Esc>', { noremap = true })
+vim.keymap.set('n', '<C-e>', '<cmd>Ex<CR>')
+
+-- clear highlights
+vim.keymap.set("n", "<C-h>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
+
+-- shift tab + tab in visual
 vim.keymap.set('v', '<S-Tab>', '<gv')
 vim.keymap.set('v', '<Tab>', '>gv')
 

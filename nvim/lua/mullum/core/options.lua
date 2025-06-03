@@ -46,7 +46,7 @@ vim.opt.clipboard:append("unnamedplus") --use system clipboard as default
 vim.opt.hlsearch = true
 
 -- for easy mouse resizing, just incase
-vim.opt.mouse = "a"
+vim.opt.mouse = ""
 
 -- gets rid of line with white spaces
 vim.g.editorconfig = true

@@ -4,20 +4,27 @@ return {
     config = function()
         local gruvbox_custom = require 'assets.gruvbox_custom'
 
+        local filename = {
+            'filename',
+            file_status = true,
+            path = 3
+        }
+
         require('lualine').setup {
               options = {
+                component_separators = '',
+                section_separators = '',
                 theme = gruvbox_custom,
               },
               sections = {
                 lualine_a = { { 'mode' } },
-                lualine_b = { 'filename', 'branch' },
+                lualine_b = { filename },
                 lualine_c = {
-                  '%=', --[[ add your center components here in place of this comment ]]
                 },
                 lualine_x = {},
-                lualine_y = { 'filetype'},
+                lualine_y = { 'encoding', 'filetype'},
                 lualine_z = {
-                  { 'location' },
+                  { 'progress' },
                 },
               },
               inactive_sections = {

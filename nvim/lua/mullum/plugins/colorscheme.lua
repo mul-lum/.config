@@ -16,6 +16,7 @@ return {
                     operators = false,
                 },
                 strikethrough = true,
+
                 invert_selection = false,
                 invert_signs = false,
                 invert_tabline = false,
@@ -31,43 +32,4 @@ return {
             }
         end
     },
-    {
-        'rose-pine/neovim',
-        name = 'rose-pine',
-        config = function()
-            require("rose-pine").setup {
-                styles = {
-                    transparency = true,
-                }
-            }
-        end
-    },
-    {
-        'Shatur/neovim-ayu',
-        config = function()
-            require('ayu').setup {
-                overrides = {
-                    Normal = { bg = "None" },
-                    NormalFloat = { bg = "none" },
-                    ColorColumn = { bg = "None" },
-                    SignColumn = { bg = "None" },
-                    Folded = { bg = "None" },
-                    FoldColumn = { bg = "None" },
-                    CursorLine = { bg = "None" },
-                    CursorColumn = { bg = "None" },
-                    VertSplit = { bg = "None" },
-                },
-            }
-        end
-    },
-    {
-        'catppuccin/nvim',
-        name= 'catppuccin',
-        config= function ()
-            require('catppuccin').setup {
-                transparent_background= true,
-                term_colors= true
-            }
-        end
-    }
 }
