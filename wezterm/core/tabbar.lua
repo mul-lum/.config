@@ -4,15 +4,18 @@ local tab_bar = {}
 tab_bar.options = {
     tab_max_width = 16,
     use_fancy_tab_bar = false,
-    -- tab_bar_at_bottom = true,
-    hide_tab_bar_if_only_one_tab = true,
+    -- hide_tab_bar_if_only_one_tab = true,
     show_new_tab_button_in_tab_bar = false,
 
     status_update_interval = 1500
 }
 
+local executableTitles = {
+    ["C://Program Files//Git//bin//bash.exe"] = "bash",
+}
+
 function tab_bar.onFormatTabTitle(tab, _, _, _, _, max_width)
-    local title = tab.active_pane.title
+    local title = executableTitles[tab.active_pane.title] or string.gsub(tab.active_pane.title, '%.exe$', '')
     local padding = string.rep(' ', 4)
 
     local bg = '#050505'
@@ -33,13 +36,12 @@ function tab_bar.onFormatTabTitle(tab, _, _, _, _, max_width)
 end
 
 function tab_bar.onUpdateStatus(window, _)
-    local time = wezterm.time.now():format("%H:%M")
-    local padding = string.rep(' ', 4)
+    local date = wezterm.strftime("%Y-%m-%d %H:%M")
 
     window:set_right_status(wezterm.format({
-        { Background = { Color = '#ebdbb2'}},
-        { Foreground = { Color = '#050505'}},
-        { Text =  padding .. time .. padding .. ' '},
+        { Background = { Color = '#050505'}},
+        { Foreground = { Color = '#ebdbb2'}},
+        { Text =  date .. ' ' },
     }))
 end
 

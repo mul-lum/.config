@@ -59,7 +59,13 @@ return {
         ['<Tab>'] = { 'accept' },
       },
       -- (optionally) automatically show the menu
-      completion = { menu = { auto_show = true } }
+      completion = {
+          menu = {
+              auto_show = function(ctx)
+                  return vim.fn.getcmdtype() == ':'
+              end
+        }
+      }
     },
 
     -- Default list of enabled providers defined so that you can extend it

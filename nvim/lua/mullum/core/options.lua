@@ -36,10 +36,12 @@ vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.splitright = true --split vertical window to the right
 vim.opt.splitbelow = true --split horizontal window to the bottom
 
--- vim.opt.shell = '"C:\\Program Files\\Git\\bin\\bash" -l'
-
 vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 50
+vim.opt.updatetime = 100
+
+-- title stuff
+vim.o.title = true
+vim.o.titlestring = 'nvim'
 
 -- clipboard
 vim.opt.clipboard:append("unnamedplus") --use system clipboard as default

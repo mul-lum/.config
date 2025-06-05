@@ -31,14 +31,12 @@ config.window_decorations = 'NONE'
 config.window_padding = { left= 10, right= 10, top= 10, bottom= 0, }
 config.window_background_opacity = 0.9
 config.window_frame = {
-  border_left_width = '0.5cell',
-  border_right_width = '0.5cell',
-  border_bottom_height = '0.25cell',
-  border_top_height = '0.25cell',
+  border_left_width = '0.3cell',
+  border_right_width = '0.3cell',
+  border_bottom_height = '0.15cell',
   border_left_color = '#050505',
   border_right_color = '#050505',
   border_bottom_color = '#050505',
-  border_top_color = '#050505',
 }
 
 -- window spec stuff
@@ -47,7 +45,7 @@ config.animation_fps = 1
 config.prefer_egl = true
 
 -- git bash stuff
-config.default_prog = { 'C://Program Files//Git//bin//bash.exe', '-l' }
+config.default_prog = { 'C://Program Files//Git//bin//bash.exe' }
 config.default_cwd = 'C://Users//jayco'
 config.term = 'xterm-256color'
 
