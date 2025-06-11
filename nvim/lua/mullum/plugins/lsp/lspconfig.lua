@@ -91,6 +91,19 @@ return {
             },
         })
 
+        lspconfig.luau_lsp.setup {
+            capabilities = capabilities,
+            settings = {
+                completion = {
+                    suggestImports = true,
+
+                    imports = {
+                        enabled = true
+                    }
+                }
+            }
+        }
+
         lspconfig.basedpyright.setup {
             capabilities = capabilities,
             settings = {

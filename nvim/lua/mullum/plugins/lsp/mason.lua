@@ -35,7 +35,8 @@ return {
             -- servers for mason to install
             ensure_installed = {
                 "lua_ls",
-                'basedpyright'
+                'basedpyright',
+                'luau_lsp'
            },
 
         })

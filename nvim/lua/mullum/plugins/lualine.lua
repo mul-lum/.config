@@ -2,20 +2,20 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-        local gruvbox_custom = require 'assets.gruvbox_custom'
+        local lotusdragon = require('themes.lotusdragon')
 
         local filename = {
             'filename',
             file_status = true,
-            path = 3
+            path = 0
         }
 
         require('lualine').setup {
               options = {
                 component_separators = '',
                 section_separators = '',
-                theme = gruvbox_custom,
-              },
+                theme = lotusdragon,
+             },
               sections = {
                 lualine_a = { { 'mode' } },
                 lualine_b = { filename },

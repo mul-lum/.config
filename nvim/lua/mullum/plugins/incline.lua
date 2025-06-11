@@ -2,13 +2,6 @@ return {
     'b0o/incline.nvim',
 --    enabled = false,
     config = function()
-        local colors = {
-              black        = '#282828',
-              white        = '#ebdbb2',
-              gray         = '#a89984',
-              darkgray     = '#050505',
-        }
-
         require('incline').setup {
             window = {
                 padding = 0,
@@ -25,8 +18,8 @@ return {
                     ' ',
                     filename,
                     ' ',
-                    guibg = colors['darkgray'],
-                    guifg = colors['white'],
+                    guibg = '#16161D',
+                    guifg = '#7E9CD8',
                   }
             end,
         }

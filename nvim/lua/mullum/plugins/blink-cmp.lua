@@ -29,8 +29,8 @@ return {
         preset = 'enter',
         ['<Space-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
 
-        ['<J>'] = {'select_next', 'fallback'},
-        ['<K>'] = {'select_prev', 'fallback'}
+        ['<C-j>'] = {'select_next', 'fallback'},
+        ['<C-k>'] = {'select_prev', 'fallback'}
     },
 
     signature = { enabled = true },

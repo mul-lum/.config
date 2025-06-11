@@ -6,19 +6,19 @@ local keybinds = require 'core.keybinds'
 local tab_bar = require 'core.tabbar'
 
 -- font stuff & appearance customization
-config.font_size = 10
-config.font = wezterm.font '0xProto Nerd Font'
+config.font_size = 10.8
+config.font = wezterm.font 'JetBrains Mono'
 config.line_height = 1.2
 config.colors = {
-    background = "#000000",
-    foreground = "#ebdbb2",
+    background = "#101016",
+    foreground = "#DCD7BA",
 
-    split = "#050505",
+    split = "#16161D",
 
-    cursor_bg = "#ebdbb2",
+    cursor_bg = "#DCD7BA",
 
     tab_bar = {
-        background = '#050505'
+        background = '#16161D'
     },
 }
 
@@ -28,8 +28,9 @@ config.default_cursor_style = 'BlinkingBlock'
 
 -- window stuff
 config.window_decorations = 'NONE'
-config.window_padding = { left= 10, right= 10, top= 10, bottom= 0, }
+config.window_padding = { left= 5, right= 5, top= 10, bottom= 0, }
 config.window_background_opacity = 0.9
+--[[ 
 config.window_frame = {
   border_left_width = '0.3cell',
   border_right_width = '0.3cell',
@@ -38,6 +39,7 @@ config.window_frame = {
   border_right_color = '#050505',
   border_bottom_color = '#050505',
 }
+]]--
 
 -- window spec stuff
 config.max_fps = 60
