@@ -18,31 +18,30 @@ local executableTitles = {
 function tab_bar.onFormatTabTitle(tab, _, _, _, _, max_width)
     local title = executableTitles[tab.active_pane.title] or string.gsub(tab.active_pane.title, '%.exe$', '')
     local index = tab.tab_index + 1
-    local padding = string.rep(' ', 2)
+    local padding = string.rep(' ', 1)
 
-    local bg = '#16161D'
-    local fg = '#DCD7BA'
+    local bg = '#0d0c0c'
+    local fg = '#C8C093'
 
-    title = padding .. index .. ': '.. wezterm.truncate_right(title, max_width / 2) .. padding
+    title = index .. ':'.. wezterm.truncate_right(title, max_width / 2)
 
     if tab.is_active then
-        bg = '#223249'
-        fg = '#7E9CD8'
+        title = title .. '*'
     end
 
     return {
         { Foreground = { Color = fg } },
         { Background = { Color = bg } },
-        { Text = title },
+        { Text = padding .. title .. padding },
     }
 end
 
 function tab_bar.onUpdateStatus(window, _)
-    local date = wezterm.strftime("%Y-%m-%d %H:%M")
+    local date = wezterm.strftime("%H:%M%p")
+    local fg = '#C8C093'
 
     window:set_right_status(wezterm.format({
-        { Foreground = { Color = '#DCD7BA'}},
-        { Background = { Color = '#223249'}},
+        { Foreground = { Color = fg }},
         { Text =  ' ' .. date .. ' ' },
     }))
 end
@@ -51,9 +50,10 @@ function tab_bar.apply_to_config(config)
     for index, value in pairs(tab_bar['options']) do
         config[index] = value
     end
+
+    wezterm.on('format-tab-title', tab_bar.onFormatTabTitle)
+    wezterm.on('update-status', tab_bar.onUpdateStatus)
 end
 
-wezterm.on('format-tab-title', tab_bar.onFormatTabTitle)
-wezterm.on('update-status', tab_bar.onUpdateStatus)
 
 return tab_bar

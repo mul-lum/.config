@@ -1,7 +1,8 @@
 return {
     'b0o/incline.nvim',
---    enabled = false,
+    enabled = false,
     config = function()
+
         require('incline').setup {
             window = {
                 padding = 0,
@@ -18,8 +19,8 @@ return {
                     ' ',
                     filename,
                     ' ',
-                    guibg = '#16161D',
-                    guifg = '#7E9CD8',
+                    guibg = '#0d0c0c',
+                    guifg = '#DCD7BA',
                   }
             end,
         }

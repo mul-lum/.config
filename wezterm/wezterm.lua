@@ -6,19 +6,20 @@ local keybinds = require 'core.keybinds'
 local tab_bar = require 'core.tabbar'
 
 -- font stuff & appearance customization
-config.font_size = 10.8
+config.font_size = 10
 config.font = wezterm.font 'JetBrains Mono'
 config.line_height = 1.2
+config.cell_width = 1
 config.colors = {
-    background = "#101016",
+    background = "#100f0e",
     foreground = "#DCD7BA",
 
-    split = "#16161D",
+    split = "#0d0c0c",
 
     cursor_bg = "#DCD7BA",
 
     tab_bar = {
-        background = '#16161D'
+        background = '#0d0c0c'
     },
 }
 
@@ -28,8 +29,8 @@ config.default_cursor_style = 'BlinkingBlock'
 
 -- window stuff
 config.window_decorations = 'NONE'
-config.window_padding = { left= 5, right= 5, top= 10, bottom= 0, }
-config.window_background_opacity = 0.9
+config.window_padding = { left= '0cell', right= '0cell', top= '0cell', bottom= '0.0cell', }
+--config.window_background_opacity = 0.9
 --[[ 
 config.window_frame = {
   border_left_width = '0.3cell',

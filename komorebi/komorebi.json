@@ -5,8 +5,8 @@
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
 
-  "default_workspace_padding": 10,
-  "default_container_padding": 10,
+  "default_workspace_padding": 5,
+  "default_container_padding": 5,
   "manage_rules": [
       {
           "kind": "Exe",

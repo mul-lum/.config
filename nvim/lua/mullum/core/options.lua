@@ -3,6 +3,7 @@ vim.cmd("let g:netrw_banner = 0 ")
 vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.cmdheight=0
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -27,7 +28,7 @@ vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'no'
 
 -- backspace
 vim.opt.backspace = { "start", "eol", "indent" }
@@ -42,6 +43,7 @@ vim.opt.updatetime = 100
 -- title stuff
 vim.o.title = true
 vim.o.titlestring = 'nvim'
+vim.o.showtabline= 0
 
 -- clipboard
 vim.opt.clipboard:append("unnamedplus") --use system clipboard as default

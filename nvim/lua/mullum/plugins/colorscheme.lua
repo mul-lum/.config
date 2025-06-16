@@ -1,38 +1,5 @@
 return {
     {
-        'ellisonleao/gruvbox.nvim',
-        config = function()
-            require('gruvbox').setup 
-            {
-                terminal_colors = true, -- add neovim terminal colors
-                undercurl = true,
-                underline = true,
-                bold = true,
-                italic = {
-                    strings = false,
-                    emphasis = false,
-                    comments = false,
-                    folds = false,
-                    operators = false,
-                },
-                strikethrough = true,
-
-                invert_selection = false,
-                invert_signs = false,
-                invert_tabline = false,
-                invert_intend_guides = false,
-                inverse = true, -- invert background for search, diffs, statuslines and errors
-                contrast = "",  -- can be "hard", "soft" or empty string
-                palette_overrides = {},
-                overrides = {
-                    Pmenu = { bg = "" }, -- Completion menu background
-                },
-                dim_inactive = false,
-                transparent_mode = true,
-            }
-        end
-    },
-    {
         "rebelot/kanagawa.nvim",
         config = function()
             require('kanagawa').setup({
@@ -65,6 +32,7 @@ return {
                         NormalFloat = { bg = "none" },
                        FloatBorder = { bg = "none" },
                         FloatTitle = { bg = "none" },
+                        LineNR = { bg = "#1D1C19"},
                         Pmenu = { fg = theme.ui.shade0, bg = "NONE", blend = vim.o.pumblend }, -- add `blend = vim.o.pumblend` to enable transparency
                         PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
                         PmenuSbar = { bg = theme.ui.bg_m1 },

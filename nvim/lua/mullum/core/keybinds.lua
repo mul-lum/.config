@@ -13,11 +13,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true})
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {noremap = true})
 vim.keymap.set('n', '<C-f>', '<C-f>zz', {noremap = true})
-vim.keymap.set('n', '<C-b>', '<C-b>zz', {noremap = true})
 
 -- netrw + exit bind
-vim.keymap.set({ 'i', 'v' }, '<C-q>', '<Esc>', { noremap = true })
-vim.keymap.set('n', '<C-e>', '<cmd>Ex<CR>')
+vim.keymap.set({ 'c', 'i', 'v' }, '<C-q>', '<Esc>', { noremap = true })
+
+-- Replace the word cursor is on globally
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Replace word cursor is on globally" })
 
 -- clear highlights
 vim.keymap.set("n", "<C-h>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
@@ -26,12 +28,12 @@ vim.keymap.set("n", "<C-h>", ":nohl<CR>", { desc = "Clear search hl", silent = t
 vim.keymap.set('v', '<S-Tab>', '<gv')
 vim.keymap.set('v', '<Tab>', '>gv')
 
--- tab stuff
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>")   --open new tab
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>") --close current tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>")     --go to next
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>")     --go to pre
-vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>") --open current tab in new tab
+-- tab stuff (not using tabs)
+-- vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>")   --open new tab
+-- vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>") --close current tab
+-- vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>")     --go to next
+-- vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>")     --go to pre
+-- vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>") --open current tab in new tab
 
 --split management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })

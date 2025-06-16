@@ -25,9 +25,6 @@ return {
                 opts.desc = "Smart rename"
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
-               opts.desc = "Show line diagnostics"
-                vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
                 opts.desc = "Show documentation for what is under cursor"
                 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
@@ -91,15 +88,24 @@ return {
             },
         })
 
-        lspconfig.luau_lsp.setup {
+        lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
             settings = {
-                completion = {
-                    suggestImports = true,
-
+                ["rust-analyzer"] = {
                     imports = {
-                        enabled = true
-                    }
+                        granularity = {
+                            group = "module",
+                        },
+                        prefix = "self",
+                    },
+                    cargo = {
+                        buildScripts = {
+                            enable = true,
+                        },
+                    },
+                    procMacro = {
+                        enable = true
+                    },
                 }
             }
         }
