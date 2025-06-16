@@ -48,8 +48,6 @@ config.animation_fps = 1
 config.prefer_egl = true
 
 -- git bash stuff
-config.default_prog = { 'C://Program Files//Git//bin//bash.exe' }
-config.default_cwd = 'C://Users//jayco'
 config.term = 'xterm-256color'
 
 keybinds.apply_to_config(config)
