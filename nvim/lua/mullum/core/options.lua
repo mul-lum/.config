@@ -36,6 +36,8 @@ vim.opt.backspace = { "start", "eol", "indent" }
 --split windows
 vim.opt.splitright = true --split vertical window to the right
 vim.opt.splitbelow = true --split horizontal window to the bottom
+vim.opt.numberwidth = 3 -- default is 4; increase for more space
+vim.opt.statuscolumn = "%s%#LineNr#%l "
 
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 100

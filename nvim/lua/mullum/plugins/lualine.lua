@@ -6,9 +6,11 @@ return {
 
         local mode = {
             'mode',
-            fmt = function(str)
-                return str:sub(1,1)
-            end
+        }
+
+        local filetype = {
+            'filetype',
+            icons_enabled = false
         }
 
         local filename = {
@@ -17,23 +19,19 @@ return {
             path = 1
         }
 
-        local function cwd()
-            return '~/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
-        end
-
         require('lualine').setup {
               options = {
                 fmt = string.lower,
-                component_separators = '',
+                component_separators = '::',
                 section_separators = '',
                 theme = lotusdragon,
              },
               sections = {
                 lualine_a = { mode },
-                lualine_b = { cwd },
+                lualine_b = {  },
                 lualine_c = { filename },
-                lualine_x = { 'encoding' },
-                lualine_y = { 'filetype'},
+                lualine_x = { 'encoding', filetype },
+                lualine_y = { 'hostname' },
                 lualine_z = {
                   { 'location' },
                 },
