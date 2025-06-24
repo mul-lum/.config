@@ -5,7 +5,8 @@ return {
       priority = 1000,
       config = function()
         require("black-metal").setup({
-            theme = "darkthrone"
+            theme = "darkthrone",
+            transparent = true,
         })
         require("black-metal").load()
       end,

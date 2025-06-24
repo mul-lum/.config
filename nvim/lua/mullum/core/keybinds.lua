@@ -12,7 +12,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual 
 -- move up and down easier
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true})
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {noremap = true})
-vim.keymap.set('n', '<C-f>', '<C-f>zz', {noremap = true})
 
 -- netrw + exit bind
 vim.keymap.set({ 'c', 'i', 'v' }, '<C-q>', '<Esc>', { noremap = true })

@@ -28,9 +28,6 @@ return {
     keymap = {
         preset = 'enter',
         ['<Space-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
-
-        ['<C-j>'] = {'select_next', 'fallback'},
-        ['<C-k>'] = {'select_prev', 'fallback'}
     },
 
     signature = { enabled = true },
