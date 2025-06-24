@@ -21,7 +21,6 @@ return {
 
         require('lualine').setup {
               options = {
-                fmt = string.lower,
                 component_separators = '::',
                 section_separators = '',
                 theme = lotusdragon,
@@ -31,7 +30,7 @@ return {
                 lualine_b = {  },
                 lualine_c = { filename },
                 lualine_x = { 'encoding', filetype },
-                lualine_y = { 'hostname' },
+                lualine_y = { 'progress' },
                 lualine_z = {
                   { 'location' },
                 },
