@@ -32,7 +32,8 @@ alias cdb='cd ..'
 alias fvim='fzf --bind "enter:become(nvim {})"'
 
 # interface stuff 
-export PS1="[\u@\h] \w\n\$ "
+# export PS1="[\u@\h] \w\n\$ "
+export PS1='\u\[\e[38;2;95;135;135m\]@\[\e[0m\]\h \[\e[38;2;95;135;135m\]\w\[\e[0m\] \[\e[38;2;193;193;193m\]\$\[\e[0m\] '
 
 # save history on only current session
 trap "history -c && history -w" EXIT
